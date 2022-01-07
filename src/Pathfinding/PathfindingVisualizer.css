@@ -31,6 +31,7 @@
     justify-self: center;
 }
 .buttons{
+    background-color: rgb(106, 163, 216);
     justify-content: center;
     display:grid;
     width:100%;
@@ -39,7 +40,7 @@
 .btn{
     font-weight: bold;
     color:white;
-    /* width:250px; */
+    /* width:95%; */
     /* width:20%; */
     /* line-height: 0.1em; */
     margin-left: 1em;
