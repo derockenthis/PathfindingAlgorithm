@@ -1,3 +1,7 @@
+# Inpisred by Clément Mihailescu
+This project built on top of Clément Mihailescu tutorial on youtube, I added the feature of an extra Algorithm (A*)
+Ability to move the starting node around, extra animations, clear path, clear walls, small features making it a more seamless experience
+for the user as well. 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
