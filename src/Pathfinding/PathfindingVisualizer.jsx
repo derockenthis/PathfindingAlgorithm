@@ -24,7 +24,6 @@ export default class PathfindingVisualizer extends Component{
         if(this.state.holdingStart || this.state.calculating) return;
         if(row == Startr && col == Startc && !this.state.holdingStart){
             const newGrid = getNewStart(this.state.grid, row, col);
-            // console.log("IMHERE");
             this.setState({grid: newGrid, mouseIsPressed: true, holdingStart: true});
             if(this.state.calculatedPath){
                 this.clearPath();
