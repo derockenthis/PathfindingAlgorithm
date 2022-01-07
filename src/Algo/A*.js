@@ -1,13 +1,12 @@
 export function Astar(grid, startNode, finishNode){
-    const visitedNodesInOrder = [];
+    // const visitedNodesInOrder = [];
     startNode.distance = 0;
     startNode.g = 0;
-    const unvisitedNodes = getAllNodes(grid);
+    // const unvisitedNodes = getAllNodes(grid);
     const openSet = [];
     const closedSet = [];
     openSet.unshift(startNode);
     while(!!openSet.length){
-        // sortedNodes(unvisitedNodes);
         sortedNodes(openSet)
         const closestNode = openSet.shift();
         if(closestNode.isWall) continue;
