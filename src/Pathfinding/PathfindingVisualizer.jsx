@@ -101,10 +101,10 @@ export default class PathfindingVisualizer extends Component{
             if (i === visitedNodesInOrder.length) {
                 setTimeout(() => {
                     this.animateShortestPath(nodesInShortestPathOrder);
-                }, 40* i/2);
+                }, 30* i/2);
                 setTimeout(() =>{
                     this.setState({calculating:false});
-                },40*i);
+                },30*i);
                 return;
             }
             setTimeout(() => {
