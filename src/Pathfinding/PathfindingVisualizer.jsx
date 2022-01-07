@@ -22,11 +22,10 @@ export default class PathfindingVisualizer extends Component{
     }
     handleMouseDown(row, col) {
         if(this.state.holdingStart || this.state.calculating) return;
-        if(row == Startr && col == Startc && !this.state.holdingStart){
+        if(row === Startr && col === Startc && !this.state.holdingStart){
             const newGrid = getNewStart(this.state.grid, row, col);
             this.setState({grid: newGrid, mouseIsPressed: true, holdingStart: true});
             if(this.state.calculatedPath){
-                console.log("Hello");
                 this.clearPath();
                 this.setState({calculatedPath:false});
             }
@@ -90,12 +89,12 @@ export default class PathfindingVisualizer extends Component{
           }
           setTimeout(() => {
             const node = visitedNodesInOrder[i];
-            // console.log(document.getElementById(`node-${node.row}-${node.col}`),"HIFDIH")
+
             document.getElementById(`node-${node.row}-${node.col}`).className =
               'node node-visited';
           }, 9*i/2);
         }
-        // this.setState({calculating:false});
+
       }
     animateAstar(visitedNodesInOrder,nodesInShortestPathOrder) {
         for (let i = 1; i <= visitedNodesInOrder.length; i++) {
@@ -110,7 +109,7 @@ export default class PathfindingVisualizer extends Component{
             }
             setTimeout(() => {
                 const node = visitedNodesInOrder[i];
-                // console.log(document.getElementById(`node-${node.row}-${node.col}`),"HIFDIH")
+
                 document.getElementById(`node-${node.row}-${node.col}`).className =
                     'node node-visited';
             }, 15 * i);
@@ -144,7 +143,6 @@ export default class PathfindingVisualizer extends Component{
         this.setState({calculatedPath:false});
         const grid = this.state.grid;
         for(let row = 0; row<25; row++){
-            console.log(row);
             for (let col = 0; col<50; col++){
                 const node  = this.state.grid[row][col];
                 const newnode = {
@@ -159,7 +157,7 @@ export default class PathfindingVisualizer extends Component{
                 }
                 grid[row][col] = newnode;
                 if(node.isWall) continue;
-                if((row == Startr && col == Startc) || (row == Finishr && col == Finishc)) continue;
+                if((row === Startr && col === Startc) || (row === Finishr && col === Finishc)) continue;
                 document.getElementById(`node-${row}-${col}`).className ='node';
                 // this.state.grid[row][col].isVisited = false;
             }
@@ -172,7 +170,7 @@ export default class PathfindingVisualizer extends Component{
         this.setState({calculatedPath:false});
         const grid = this.state.grid;
         for(let row = 0; row<25; row++){
-            console.log(row);
+
             for (let col = 0; col<50; col++){
                 const node  = this.state.grid[row][col];
                 const newnode = {
@@ -188,7 +186,7 @@ export default class PathfindingVisualizer extends Component{
                 }
                 grid[row][col] = newnode;
                 // if(node.isWall) continue;
-                if((row == Startr && col == Startc) || (row == Finishr && col == Finishc)) continue;
+                if((row === Startr && col === Startc) || (row === Finishr && col === Finishc)) continue;
                 document.getElementById(`node-${row}-${col}`).className ='node';
                 // this.state.grid[row][col].isVisited = false;
             }
@@ -198,7 +196,7 @@ export default class PathfindingVisualizer extends Component{
     }
     render(){
         const {grid, mouseIsPressed} = this.state;
-        // console.log(grid);
+
 
         return(
             <>
@@ -225,8 +223,7 @@ export default class PathfindingVisualizer extends Component{
                     <div key={rowIdx} className = "row">
                         {row.map((node,nodeIdx) =>{
                             const {row, col, isFinish, isStart, isWall} = node;
-                            // console.log({isStart})
-                            // console.log(node)
+
                             return(
                                 <Node
                                 key={nodeIdx}
@@ -278,7 +275,7 @@ const createNode = (col, row) => {
     };
   };
 const getNewGridWithWallToggled = (grid, row, col) => {
-    if(row == Startr && col == Startc){
+    if(row === Startr && col === Startc){
         return grid;
     }
     const newGrid = grid.slice();
