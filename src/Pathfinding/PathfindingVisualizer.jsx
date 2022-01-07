@@ -102,7 +102,7 @@ export default class PathfindingVisualizer extends Component{
             if (i === visitedNodesInOrder.length) {
                 setTimeout(() => {
                     this.animateShortestPath(nodesInShortestPathOrder);
-                }, 15* i);
+                }, 20* i/2);
                 setTimeout(() =>{
                     this.setState({calculating:false});
                 },25*i);
@@ -202,19 +202,22 @@ export default class PathfindingVisualizer extends Component{
 
         return(
             <>
-            <div className = "Buttons">
-                <button onClick={() => this.visualizeDijkstra()}>
-                Visualize Dijkstra's Algorithm
-                </button>
-                <button onClick={() => this.visualizeAstar()}>
-                Visualize A* Algorithm
-                </button>
-                <button onClick={() => this.clearPath()}>
-                Clear Path
-                </button>
-                <button onClick={() => this.clearBoard()}>
-                Clear Board
-                </button>
+            <div class = "nav-container">
+                <h1 className = "title">Pathfinding Visualizer</h1>
+                <div className = "buttons">
+                    <button className="btn" onClick={() => this.visualizeDijkstra()}>
+                    Visualize Dijkstra's Algorithm
+                    </button>
+                    <button className="btn" onClick={() => this.visualizeAstar()}>
+                    Visualize A* Algorithm
+                    </button>
+                    <button className="btn" onClick={() => this.clearPath()}>
+                    Clear Path
+                    </button>
+                    <button className="btn" onClick={() => this.clearBoard()}>
+                    Clear Board
+                    </button>
+                </div>
             </div>
             <div className = "grid" viewBox="0 0 1404 612" width= "1920" height = "1080">
                 {grid.map((row,rowIdx) =>{

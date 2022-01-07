@@ -1,8 +1,8 @@
 .node{
     /* width:auto;
     height:auto; */
-    height:2.5vh;
-    width:2.5vh;
+    height:3vh;
+    width:3vh;
     outline: 2px solid rgb(184, 184, 184);
     display:inline-block;
     /* display:flex; */
