@@ -10,17 +10,22 @@ export function Astar(grid, startNode, finishNode){
         sortedNodes(openSet)
         const closestNode = openSet.shift();
         if(closestNode.isWall) continue;
-        if(closestNode.distance === Infinity) return closedSet;
+        if(closestNode.distance === Infinity){
+
+            return closedSet;
+        } 
         if(closestNode.isVisited) continue;
         closestNode.isVisited = true;
         closedSet.push(closestNode);
 
         if(closestNode === finishNode){
+
             return closedSet;
         }
         updateUnvisited(closestNode,grid,finishNode,startNode,openSet)
 
     }
+    return closedSet;
 
 
 }

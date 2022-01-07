@@ -95,8 +95,10 @@ export default class PathfindingVisualizer extends Component{
           }, 9*i/2);
         }
 
+
       }
     animateAstar(visitedNodesInOrder,nodesInShortestPathOrder) {
+
         for (let i = 1; i <= visitedNodesInOrder.length; i++) {
             if (i === visitedNodesInOrder.length) {
                 setTimeout(() => {
@@ -114,7 +116,7 @@ export default class PathfindingVisualizer extends Component{
                     'node node-visited';
             }, 15 * i);
         }
-        // this.setState({calculating:false});
+
     }
     visualizeDijkstra() {
         if(this.state.calculating) return;
