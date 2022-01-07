@@ -16,7 +16,7 @@
     /* flex-shrink: 1; */
 }
 .nav-container{
-    background-color: rgb(106, 216, 179);
+    background-color: rgb(106, 163, 216);
     width:100%;
     display:grid;
     /* flex-direction: column; */
@@ -36,19 +36,25 @@
     grid-template-columns: repeat(4,auto);
 }
 .btn{
+    font-weight: bold;
     color:white;
     width:250px;
     /* width:20%; */
     /* line-height: 0.1em; */
     margin-left: 1em;
     font-size: 23px;
-    background-color: rgb(255, 81, 81);
-    text-decoration: none;
-    border-radius: 5px;
+    /* background-color: rgb(255, 81, 81); */
+    background-color: rgba(255, 81, 81, 0);
+    /* text-decoration: none; */
+    border:none;
+    /* border-radius: 7px;
+    border: solid 3px; */
+    /* border-color: rgb(194, 63, 63); */
 
 }
 .btn:hover{
     transition: all .4s ease;
-    background-color: rgb(250, 136, 136);
+    color:yellow;
+    /* background-color: rgb(250, 136, 136); */
     cursor: pointer;
 }

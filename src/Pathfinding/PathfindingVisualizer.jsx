@@ -102,10 +102,10 @@ export default class PathfindingVisualizer extends Component{
             if (i === visitedNodesInOrder.length) {
                 setTimeout(() => {
                     this.animateShortestPath(nodesInShortestPathOrder);
-                }, 20* i/2);
+                }, 40* i/2);
                 setTimeout(() =>{
                     this.setState({calculating:false});
-                },25*i);
+                },40*i);
                 return;
             }
             setTimeout(() => {
@@ -113,7 +113,7 @@ export default class PathfindingVisualizer extends Component{
                 // console.log(document.getElementById(`node-${node.row}-${node.col}`),"HIFDIH")
                 document.getElementById(`node-${node.row}-${node.col}`).className =
                     'node node-visited';
-            }, 9 * i);
+            }, 15 * i);
         }
         // this.setState({calculating:false});
     }
