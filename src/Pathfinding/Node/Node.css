@@ -1,0 +1,58 @@
+.node{
+    /* width:auto;
+    height:auto; */
+    height:2.5vh;
+    width:2.5vh;
+    outline: 2px solid rgb(184, 184, 184);
+    display:inline-block;
+    /* display:flex; */
+    flex-shrink: 2;
+}
+.node-held{
+    background-color: black;
+}
+.node-finish{
+    background-color: red;
+    animation: shortestPath 1s;
+
+}
+.node-start{
+    background-color: green;
+}
+.node-wall{
+    background-color: darkblue;
+}
+.node-visited{
+    background-color: yellow;
+    animation: visited .6s ;
+}
+@keyframes visited {
+    0% {background-color: white;
+    transform: scale(0);
+    border-radius: 50%;}
+    50%{background-color: rgb(248, 116, 116);
+        transform: scale(0.8);
+        border-radius: 50%;}
+    100%{background-color: yellow;
+        transform: scale(.9);
+        border-radius: 0%;}
+  }
+
+.node-shortest-path{
+    background-color: red;
+    animation: shortestPath .7s;
+}
+@keyframes shortestPath {
+    0% {background-color: yellow;
+        transform: scale(0);
+        border-radius: 50%;
+        outline:rgb(156, 156, 1)}
+    50%{background-color: rgb(255, 145, 0);
+        border-radius: 50%;
+        transform: scale(1.2);
+        outline:rgb(170, 96, 0)}
+    100%{background-color: red;
+        border-radius: 0%;
+        transform: scale(1);
+        outline:rgb(175, 0, 0)}
+  }
