@@ -26,6 +26,7 @@ export default class PathfindingVisualizer extends Component{
             const newGrid = getNewStart(this.state.grid, row, col);
             this.setState({grid: newGrid, mouseIsPressed: true, holdingStart: true});
             if(this.state.calculatedPath){
+                console.log("Hello");
                 this.clearPath();
                 this.setState({calculatedPath:false});
             }
